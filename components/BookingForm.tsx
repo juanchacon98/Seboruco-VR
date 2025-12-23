@@ -22,16 +22,17 @@ const BookingForm: React.FC = () => {
 
     if (type === 'VR') {
       let usd = 0;
-      if (players === 1) {
-        if (duration === 5) usd = 3;
-        else if (duration === 10) usd = 5;
-        else if (duration === 25) usd = 10;
-      } else { // 2 players
-        if (duration === 5) usd = 5;
-        else if (duration === 10) usd = 10;
-        else if (duration === 25) usd = 17;
+      let cop = '';
+
+      // Specific pricing logic based on provided table
+      if (duration === 5) {
+        if (players === 1) { usd = 2; cop = '7.000'; }
+        else { usd = 3; cop = '10.000'; }
+      } else if (duration === 10) {
+        if (players === 1) { usd = 3; cop = '10.000'; }
+        else { usd = 5; cop = '16.000'; }
       }
-      const cop = (usd * COP_RATE).toLocaleString('es-CO');
+      
       calculated = `$${usd} USD / ${cop} COP`;
     } else { // RETRO
       if (players === 1) calculated = '$3.000 COP';
@@ -166,8 +167,8 @@ const BookingForm: React.FC = () => {
                 {formData.type === 'VR' && (
                   <div>
                     <label className="block text-gray-400 text-sm mb-2">Duración</label>
-                    <div className="grid grid-cols-3 gap-3">
-                      {[5, 10, 25].map((min) => (
+                    <div className="grid grid-cols-2 gap-3">
+                      {[5, 10].map((min) => (
                         <button 
                           key={min}
                           onClick={() => handleChange('duration', min)}

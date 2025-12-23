@@ -1,5 +1,5 @@
 export type GameType = 'VR' | 'RETRO';
-export type Duration = 5 | 10 | 25;
+export type Duration = 5 | 10;
 
 export interface PricingTier {
   duration: number;

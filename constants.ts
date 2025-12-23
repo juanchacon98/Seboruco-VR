@@ -34,9 +34,8 @@ export const FAQS: FaqItem[] = [
 ];
 
 export const PRICING_VR: PricingTier[] = [
-  { duration: 5, price1: "$3 (11.400 COP)", price2: "$5 (19.000 COP)", currency: 'USD' },
-  { duration: 10, price1: "$5 (19.000 COP)", price2: "$10 (38.000 COP)", currency: 'USD' },
-  { duration: 25, price1: "$10 (38.000 COP)", price2: "$17 (64.600 COP)", currency: 'USD' },
+  { duration: 5, price1: "$2 (7.000 COP)", price2: "$3 (10.000 COP)", currency: 'USD' },
+  { duration: 10, price1: "$3 (10.000 COP)", price2: "$5 (16.000 COP)", currency: 'USD' },
 ];
 
 export const PRICING_RETRO: PricingTier[] = [
